@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 文件名必须为c3p0-config.xml，因为要根据文件名来解析加载 -->
+<c3p0-config>
+    <default-config>
+        <!-- &:&amp; -->
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/db_user?useUnicode=true&amp;characterEncoding=utf8</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="user">root</property>
+        <property name="password">1111</property>
+
+        <!-- 初始化数据库连接池容量 -->
+        <property name="initialPoolSize">3</property>
+        <!-- 最大数据库连接池容量 -->
+        <property name="maxPoolSize">10</property>
+        <!-- 设置连接等待时间 -->
+        <property name="maxIdleTime">1000</property>
+    </default-config>
+</c3p0-config>
