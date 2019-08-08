@@ -32,6 +32,6 @@
 - [jquery入门学习的站点](http://jquery.cuishifeng.cn/)
 
 
-##### 欢迎关注我的微信订阅号,如有问题，需要技术交流加微信：lxx130221：
+##### 欢迎关注我的微信订阅号,如有问题，需要技术交流加微信：lxx130221
 ![vxgzh.png](https://i.loli.net/2019/08/08/3PrF5BAkvfJgn8X.jpg)
 
