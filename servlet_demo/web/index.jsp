@@ -30,11 +30,29 @@
       <div class="row">
         <div class="col-sm-8 blog-main">
           <div class="blog-post">
-            <c:forEach items="${paginationDTOList.data}" var="content">
-              <p class="blog-post-meta">发布于  <fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"/>  by  <a href="#"> 雨女无瓜</a><span style="font-size: 12px">  阅读数 998</span></p>
-              <h3 class="blog-post-meta"><a href="/article?articleId=${content.id}">${content.title}</a></h3>
-              <p>${content.content}</p>
-              <hr>
+            <c:forEach items="${paginationDTOList.data}" var="content" varStatus="dataStatus">
+              <%--<p class="blog-post-meta">发布于  <fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"/>  by  <a href="#"> 雨女无瓜</a><span style="font-size: 12px">  阅读数 998</span></p>--%>
+              <%--<h3 class="blog-post-meta"><a href="/article?articleId=${content.id}">${content.title}</a></h3>--%>
+              <%--<p>${content.content}</p>--%>
+              <%--<hr>--%>
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" width="200px" height="120px" src="images/pic${dataStatus.count}.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h3 class="media-heading"><a href="/article?articleId=${content.id}">${content.title}</a></h3>
+                  ${content.content}
+                </div>
+                <div class="media-auth">
+                  <span class="auth-span"><i class="glyphicon glyphicon-user"></i><a href="#">九月</a></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-time"></i><fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"></fmt:formatDate></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-eye-open"></i>85011浏览</span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-comment"></i><a href="#">1评论</a></span>
+                  <span><i class="glyphicon glyphicon-heart-empty"></i><a href="#">114喜欢</a></span>
+                </div>
+              </div>
             </c:forEach>
           </div><!-- /.blog-post -->
 
@@ -92,7 +110,7 @@
 
         </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="background-color: white">
           <!--热门专题-->
           <div class="sidebar-module sidebar-module-inset">
             <h4>热门专题</h4>
