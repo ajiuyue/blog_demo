@@ -6,8 +6,7 @@ function like(e) {
         data:{
             id:id
         },
-        success:function (res) {
-            alert(res);
+        success:function () {
             $("#like_"+id).text(parseInt($("#like_"+id).text())+1);
         }
     });
