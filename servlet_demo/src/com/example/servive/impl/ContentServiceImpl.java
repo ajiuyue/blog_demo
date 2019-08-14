@@ -4,6 +4,7 @@ import com.example.dao.ContentDao;
 import com.example.dao.impl.ContentDaoImpl;
 import com.example.dto.ArchiveDTO;
 import com.example.dto.PaginationDTO;
+import com.example.dto.PreviousAndNextDTO;
 import com.example.model.Content;
 import com.example.servive.ContentService;
 import com.example.utils.RemoveHtmlUtil;
@@ -70,7 +71,11 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public Content getArticleById(Integer id) {
-        return contentDao.getArticleById(id);
+        Content article = contentDao.getArticleById(id);
+        if (article != null) {
+            contentDao.IncViewCountById(id,article);
+        }
+        return article;
     }
 
     @Override
@@ -120,5 +125,25 @@ public class ContentServiceImpl implements ContentService {
     public List<ArchiveDTO> archiveArticle() {
 
         return contentDao.archiveArticle();
+    }
+
+    @Override
+    public void incLikeCountById(int id) {
+        Content article = contentDao.getArticleById(id);
+        if (article != null) {
+            contentDao.incLikeCountById(id, article);
+        }
+    }
+
+    @Override
+    public PreviousAndNextDTO getPreviousAndNext(Content content) {
+         PreviousAndNextDTO pnDTO = new PreviousAndNextDTO();
+        List<Content> contentList = contentDao.getPreviousAndNext(content);
+        if (contentList.size()==2){
+            pnDTO.setPrevious(contentList.get(1));
+
+        }
+        pnDTO.setNext(contentList.get(0));
+        return pnDTO;
     }
 }

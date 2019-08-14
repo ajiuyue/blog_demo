@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
@@ -49,8 +50,12 @@
 
           <nav>
             <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
+                <c:if test="${pnDTO.previous != null}">
+                    <li><a href="/article?articleId=${pnDTO.previous.id}">上一篇: ${fn:substring(pnDTO.previous.title,0,15)}</a></li>
+                </c:if>
+                <c:if test="${pnDTO.next != null}">
+                    <li><a href="/article?articleId=${pnDTO.next.id}">下一篇：${fn:substring(pnDTO.next.title,0,15)} </a></li>
+                </c:if>
             </ul>
           </nav>
 

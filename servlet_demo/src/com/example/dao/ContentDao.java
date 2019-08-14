@@ -26,4 +26,10 @@ public interface ContentDao {
     List<Content> listByArticle(String publishTime, Integer offset, Integer size);
 
     List<ArchiveDTO> archiveArticle();
+
+    void IncViewCountById(Integer id, Content article);
+
+    void incLikeCountById(int id, Content article);
+
+    List<Content> getPreviousAndNext(Content content);
 }

@@ -1,6 +1,7 @@
 package com.example.servlet;
 
 import com.example.dto.ArchiveDTO;
+import com.example.dto.PreviousAndNextDTO;
 import com.example.model.Content;
 import com.example.servive.ContentService;
 import com.example.servive.impl.ContentServiceImpl;
@@ -30,6 +31,8 @@ public class ArticleServlet extends HttpServlet {
         req.setAttribute("content",content);
         List<ArchiveDTO> archiveDTOList = contentService.archiveArticle();
         req.setAttribute("archiveDTOList",archiveDTOList);
+        PreviousAndNextDTO pnDTO = contentService.getPreviousAndNext(content);
+        req.setAttribute("pnDTO",pnDTO);
         req.getRequestDispatcher("article.jsp").forward(req,resp);
     }
 

@@ -2,6 +2,7 @@ package com.example.servive;
 
 import com.example.dto.ArchiveDTO;
 import com.example.dto.PaginationDTO;
+import com.example.dto.PreviousAndNextDTO;
 import com.example.model.Content;
 
 import java.util.List;
@@ -25,4 +26,8 @@ public interface ContentService {
     PaginationDTO getArticleByPublishTime(String publishTime, Integer page, Integer size);
 
     List<ArchiveDTO> archiveArticle();
+
+    void incLikeCountById(int parseInt);
+
+    PreviousAndNextDTO getPreviousAndNext(Content content);
 }

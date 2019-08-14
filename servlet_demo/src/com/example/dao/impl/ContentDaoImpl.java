@@ -121,4 +121,36 @@ public class ContentDaoImpl implements ContentDao {
         }
         return null;
     }
+
+    @Override
+    public void IncViewCountById(Integer id, Content article) {
+        String sql = "update content set viewCount = ? +1 where id = ?";
+        try {
+            queryRunner.update(sql,article.getViewCount(),id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void incLikeCountById(int id, Content article) {
+        String sql = "update content set likeCount = ?+1 where id = ?";
+        try {
+            queryRunner.update(sql,article.getLikeCount(),id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Content> getPreviousAndNext(Content content) {
+        String sql = "(select * from content where gmtCreate < ? order by id desc limit 1) union all(select * from content where gmtCreate > ? order by id limit 1)";
+        BeanListHandler<Content> beanList = new BeanListHandler<>(Content.class);
+        try {
+            return queryRunner.query(sql, beanList,content.getGmtCreate(),content.getGmtCreate());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
