@@ -12,6 +12,9 @@ public class Content {
     private String title;
     private String content;
     private String tag;
+    private Integer viewCount;
+    private Integer commentCount;
+    private Integer likeCount;
     private Timestamp gmtCreate;
     private Timestamp gmtModify;
 
@@ -61,6 +64,30 @@ public class Content {
 
     public void setGmtModify(Timestamp gmtModify) {
         this.gmtModify = gmtModify;
+    }
+
+    public Integer getViewCount() {
+        return viewCount;
+    }
+
+    public void setViewCount(Integer viewCount) {
+        this.viewCount = viewCount;
+    }
+
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
     }
 
     @Override
