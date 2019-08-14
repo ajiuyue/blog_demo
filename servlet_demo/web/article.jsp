@@ -57,7 +57,7 @@
         </div><!-- /.blog-main -->
 
           <!--right-->
-          <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="background-color: white">
               <!--热门专题-->
               <div class="sidebar-module sidebar-module-inset">
                   <h4>热门专题</h4>

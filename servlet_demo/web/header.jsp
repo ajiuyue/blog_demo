@@ -65,7 +65,7 @@
                     <a href="exchange.jsp">技术交流</a>
                 </li>
                 <li>
-                    <a href="http://47.102.141.55/page/about/preview">
+                    <a href="http://47.102.141.55/">
                         <span class="hidden-sm">关于</span>
                     </a>
                 </li>

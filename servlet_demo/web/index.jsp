@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <script src="js/jquery-3.4.1.min.js" type="application/javascript"></script>
+  <script src="js/index.js" type="application/javascript"></script>
 </head>
 
 <body class="body-home">
@@ -28,7 +29,7 @@
     <div class="container">
       <!--begin-->
       <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-8">
           <div class="blog-post">
             <c:forEach items="${paginationDTOList.data}" var="content" varStatus="dataStatus">
               <%--<p class="blog-post-meta">发布于  <fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"/>  by  <a href="#"> 雨女无瓜</a><span style="font-size: 12px">  阅读数 998</span></p>--%>
@@ -42,15 +43,15 @@
                   </a>
                 </div>
                 <div class="media-body">
-                  <h3 class="media-heading"><a href="/article?articleId=${content.id}">${content.title}</a></h3>
+                  <h4 class="media-heading"><a href="/article?articleId=${content.id}">${content.title}</a></h4>
                   ${content.content}
                 </div>
                 <div class="media-auth">
-                  <span class="auth-span"><i class="glyphicon glyphicon-user"></i><a href="#" class="auth-span-span">九月</a></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-user"></i><a href="#"  class="auth-span-span">九月</a></span>
                   <span class="auth-span"><i class="glyphicon glyphicon-time"></i><span class="auth-span-span"><fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"></fmt:formatDate></span></span>
                   <span class="auth-span"><i class="glyphicon glyphicon-eye-open"></i><span class="auth-span-span2">${content.viewCount}</span></span>
                   <span class="auth-span"><i class="glyphicon glyphicon-comment"></i><a class="auth-span-span2" href="#">${content.commentCount}</a></span>
-                  <span><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span class="auth-span-span2">${content.likeCount}</span></a></span>
+                  <span id="${content.id}" onclick="like(this)" ><i style="color: #43a047" class="glyphicon glyphicon-heart-empty"></i><span style="color: #43a047" id="like_${content.id}" class="auth-span-span2">${content.likeCount}</span></span>
                 </div>
               </div>
             </c:forEach>
