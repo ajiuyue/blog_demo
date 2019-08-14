@@ -6356,6 +6356,7 @@ a.thumbnail.active {
 
 .media {
     margin-top: 15px;
+    background-color: white;
 }
 
 .media:first-child {
@@ -6373,6 +6374,7 @@ a.thumbnail.active {
 }
 
 .media-object {
+    padding: 10px;
     display: block;
 }
 
@@ -6406,7 +6408,7 @@ a.thumbnail.active {
 }
 
 .media-heading {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 

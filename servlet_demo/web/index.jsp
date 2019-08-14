@@ -46,11 +46,11 @@
                   ${content.content}
                 </div>
                 <div class="media-auth">
-                  <span class="auth-span"><i class="glyphicon glyphicon-user"></i><a href="#">九月</a></span>
-                  <span class="auth-span"><i class="glyphicon glyphicon-time"></i><fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"></fmt:formatDate></span>
-                  <span class="auth-span"><i class="glyphicon glyphicon-eye-open"></i>85011浏览</span>
-                  <span class="auth-span"><i class="glyphicon glyphicon-comment"></i><a href="#">1评论</a></span>
-                  <span><i class="glyphicon glyphicon-heart-empty"></i><a href="#">114喜欢</a></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-user"></i><a href="#" class="auth-span-span">九月</a></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-time"></i><span class="auth-span-span"><fmt:formatDate value="${content.gmtCreate}" pattern="yyyy-MM-dd"></fmt:formatDate></span></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-eye-open"></i><span class="auth-span-span2">${content.viewCount}</span></span>
+                  <span class="auth-span"><i class="glyphicon glyphicon-comment"></i><a class="auth-span-span2" href="#">${content.commentCount}</a></span>
+                  <span><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span class="auth-span-span2">${content.likeCount}</span></a></span>
                 </div>
               </div>
             </c:forEach>

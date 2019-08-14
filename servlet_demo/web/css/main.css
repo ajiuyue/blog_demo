@@ -109,7 +109,9 @@ code {
     box-sizing: content-box !important; }
 
 .body-home {
-    background-color: #fafafa; }
+    /*background-color: #fafafa; */
+    background-color: #eee;
+}
 
 .home p, .home li {
     font-size: 16px; }
@@ -505,4 +507,25 @@ input:focus {
     color: #f44336; }
 
 .highlight .il {
-    color: #ff9800; }
+    color: #ff9800;
+}
+
+.media-auth{
+    float: right;
+    margin-right: 20px;
+    padding-bottom: 10px;
+}
+.media-auth a{
+    text-decoration: none;
+}
+.auth-span{
+    padding-right: 10px;
+}
+
+.auth-span-span{
+    padding-left: 8px;
+}
+
+.auth-span-span2{
+    padding-left: 5px;
+}
