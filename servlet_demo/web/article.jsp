@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
@@ -35,7 +36,7 @@
         <div class="col-sm-8 blog-main">
           <div class="blog-post">
             <h3 class="top-pos"><span>${content.title}</span></h3>
-            <span class="text-span">| 作者  九月  |  发布于 2019-8-2  |  阅读数：998</span>
+            <span class="text-span">| 作者  九月  |  发布于 ${content.gmtCreate}  |  阅读数 ${content.viewCount}</span>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="blog-view">
                 <textarea style="display:none;">${content.content}</textarea>
